@@ -23,7 +23,7 @@
   background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wdth" var(--card-text);
+  font-variation-settings: "wght" var(--card-text);
 }
 
 /*HEADER*/
@@ -244,7 +244,6 @@
 
 .card__icon-button {
   margin-inline-end: -8px;
-  border: none;
   border: 2px solid transparent;
   background-color: var(--bg-color);
   cursor: pointer;

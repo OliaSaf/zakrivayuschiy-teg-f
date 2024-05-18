@@ -90,7 +90,7 @@
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: heartbeat 0.3s ease-in backwards 0.1s;
+  animation: heartbeat 0.3s ease-in 0.1s alternate;
 }
 
 @keyframes heartbeat {
@@ -105,7 +105,7 @@
 
 .like-icon.is-liked .sparks {
   transform-origin: center;
-  animation: sparkling 0.3s ease-in backwards 0.3s;
+  animation: sparkling 0.3s ease-in 0.3s alternate;
 }
 
 @keyframes sparkling {

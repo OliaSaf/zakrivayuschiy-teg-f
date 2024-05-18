@@ -53,6 +53,7 @@
 
 .header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
 }
 
 .header__title {
@@ -78,7 +79,8 @@
   cursor: pointer;
 }
 
-.theme-menu__button:disabled {
+.theme-menu__button:disabled,
+.theme-menu__button:active {
   pointer-events: none;
 }
 
@@ -115,11 +117,12 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.post {
+.card__list {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -133,10 +136,9 @@
 
 .card__title {
   padding: 5px 10px;
-  padding-inline: 10px;
-  font-weight: var(--card-title);
   font-size: 18px;
   text-wrap: wrap;
+  font-variation-settings: "wght" var(--card-title);
 }
 
 @media (width <= 375px) {
@@ -186,38 +188,40 @@
 
 .card__image {
   display: block;
+  object-fit: cover;
+  object-position: center;
   inline-size: 100%;
 }
 
-.card_type_ready {
+.filter-contrast-more {
   filter: contrast(1.2);
 }
 
-.card_type_intro {
+.filter-saturate-more {
   filter: saturate(1.4);
 }
 
-.card_type_happy {
+.filter-saturate-contrast-brightness {
   filter: saturate(1.4) contrast(1.5) brightness(1.5);
 }
 
-.card_type_study {
+.filter-saturate-opacity {
   filter: saturate(1.2) opacity(0.8);
 }
 
-.card_type_tired {
+.filter-grayscale-blur {
   filter: grayscale(0.8) blur(2px);
 }
 
-.card_type_getup {
+.filter-saturate-less {
   filter: saturate(0.8);
 }
 
-.card_type_code {
+.filter-hue-blur {
   filter: hue-rotate(0.8turn) blur(4px);
 }
 
-.card_type_future {
+.filter-contrast-less {
   filter: contrast(0.8);
 }
 
@@ -235,7 +239,6 @@
 .card__buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 7px;
   padding-inline-end: 25px;
   padding-block-end: 25px;
 }
@@ -243,9 +246,9 @@
 /*HEART-ICON*/
 
 .card__icon-button {
-  margin-inline-end: -8px;
   border: 2px solid transparent;
   background-color: var(--bg-color);
+  transition: border 0.3s ease;
   cursor: pointer;
   block-size: 38px;
 }
@@ -257,7 +260,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
-  transition: border 0.3s ease;
 }
 
 /*HEART-ICON*/
@@ -281,13 +283,13 @@
   border: 2px solid var(--accent-color);
   color: var(--button-text-color);
   background-color: var(--bg-color);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .button-interactive:focus {
   box-shadow: 2px 2px 0 var(--accent-color);
   outline: none;
-  transition: box-shadow 0.3s ease;
 }
 
 .button-interactive::after {
@@ -309,16 +311,15 @@
 
 /*CONTENT*/
 
-/*FOOTER*/
+/*SAVE BUTTON*/
 
-.footer {
+.save__button {
   display: flex;
   justify-content: center;
-  margin-inline: auto;
-  margin-block: 50px 100px;
+  margin: 50px auto 100px;
 }
 
-.footer__floppy-button {
+.save__button-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,7 +329,7 @@
 }
 
 @media (width <= 375px) {
-  .footer__floppy-button {
+  .save__button-button {
     flex-direction: column;
     block-size: 84px;
   }
@@ -347,12 +348,11 @@
   border: 2px solid var(--accent-color);
   padding: 30px;
   background-color: var(--bg-color);
-  block-size: 191px;
   inline-size: clamp(341px, 50vi, 353px);
 }
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.7);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .dialog .floppy-icon {
@@ -391,5 +391,4 @@
 .dialog[open] .button__text {
   text-transform: uppercase;
 }
-
-/*FOOTER*/
+/*SAVE BUTTON*/

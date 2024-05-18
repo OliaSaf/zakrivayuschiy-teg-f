@@ -142,7 +142,7 @@
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -207,7 +207,7 @@
                 <p class="card__text">Получилось! Кто молодец? Я молодец!</p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -275,7 +275,7 @@
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -340,12 +340,12 @@
                   единомышленники, не правда ли?
                 </p>
                 <p class="card__text">
-                  Сначало было непонятно, но в итоге проектная работая
+                  Сначало было непонятно, но в итоге проектная работа
                   покорилась. Действительно, можно и передохнуть немного.
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -411,7 +411,7 @@
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -480,7 +480,7 @@
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -550,7 +550,7 @@
                 </p>
               </div>
               <div class="card__buttons">
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     aria-hidden="true"
                     class="like-icon"
@@ -602,15 +602,26 @@
           onclick="window['dialog-id'].showModal()"
           aria-controls="dialog-id"
         >
-          <svg class="floppy-icon" viewBox="0 0 21 21">
-            <use href="./svg/floppy.svg#floppy"></use>
+          <svg
+            class="button__floppy"
+            width="21"
+            height="21"
+            fill="currentColor"
+            viewBox="0 0 21 21"
+          >
+            <use href="./svg/floppy.svg#floppy-1"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
         <dialog class="dialog" id="dialog-id">
           <div class="dialog__card">
-            <svg class="floppy-icon" viewBox="0 0 21 21">
-              <use href="./svg/floppy.svg#floppy"></use>
+            <svg
+              class="dialog__floppy"
+              width="39"
+              height="39"
+              viewBox="0 0 39 39"
+            >
+              <use href="./svg/floppy.svg#floppy-2"></use>
             </svg>
             <p class="button__text dialog__text">
               Вставьте дискету, чтобы продолжить

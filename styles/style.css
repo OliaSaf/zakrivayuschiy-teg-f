@@ -19,8 +19,8 @@
   font-family: var(--main-font), sans-serif;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
-  background-position: fixed;
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--card-text);
@@ -79,18 +79,14 @@
   cursor: pointer;
 }
 
-.theme-menu__button:disabled,
-.theme-menu__button:active {
+.theme-menu__button:disabled {
+  opacity: 0.6;
   pointer-events: none;
 }
 
-.theme-menu__button:disabled,
-.theme-menu__button:hover {
-  opacity: 0.6;
-}
-
 .theme-menu__button:focus,
-.theme-menu__button:focus-visible {
+.theme-menu__button:focus-visible,
+.theme-menu__button:hover {
   outline: none;
   opacity: 0.6;
 }
@@ -191,6 +187,7 @@
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  aspect-ratio: 1/1;
 }
 
 .filter-contrast-more {
@@ -234,19 +231,25 @@
 
 .card__text {
   font-weight: var(--card-text);
+  line-height: 21px;
 }
 
 .card__buttons {
   display: flex;
   justify-content: flex-end;
-  padding-inline-end: 25px;
-  padding-block-end: 25px;
+  gap: 4px;
+  margin-inline-end: 25px;
+  margin-block-end: 25px;
 }
 
 /*HEART-ICON*/
 
 .card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid transparent;
+  padding: 0;
   background-color: var(--bg-color);
   transition: border 0.3s ease;
   cursor: pointer;
@@ -324,7 +327,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  inline-size: clamp(306px, 25vi, 340px);
+  inline-size: 340px;
   block-size: 55px;
 }
 
@@ -332,23 +335,42 @@
   .save__button-button {
     flex-direction: column;
     block-size: 84px;
+    inline-size: 310px;
   }
 }
 
-.floppy-icon {
+.button__floppy {
   z-index: 1;
-  fill: var(--button-text-color);
-  stroke: var(--button-text-color);
+  color: var(--button-text-color);
   inline-size: 21px;
-  block-size: 21px;
+  block-size: auto;
   mix-blend-mode: difference;
+}
+
+@media (width <= 375px) {
+  .button__floppy {
+    inline-size: 28px;
+  }
 }
 
 .dialog {
   border: 2px solid var(--accent-color);
   padding: 30px;
   background-color: var(--bg-color);
-  inline-size: clamp(341px, 50vi, 353px);
+  inline-size: 353px;
+}
+
+@media (width <= 375px) {
+  .dialog {
+    inline-size: 341px;
+  }
+}
+
+.dialog__floppy {
+  color: var(--button-text-color);
+  inline-size: 100px;
+  block-size: auto;
+  mix-blend-mode: difference;
 }
 
 .dialog::backdrop {
@@ -363,7 +385,13 @@
 .dialog__button {
   padding: 0;
   block-size: 38px;
-  inline-size: clamp(257px, 25vi, 289px);
+  inline-size: 289px;
+}
+
+@media (width <= 375px) {
+  .dialog__button {
+    inline-size: 273px;
+  }
 }
 
 .dialog[open] {
